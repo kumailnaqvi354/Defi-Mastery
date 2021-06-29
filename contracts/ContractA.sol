@@ -12,12 +12,16 @@ contract ContractA{
     ContractB public contractB;
 
     constructor(address _token,address _contractB){
+        // passing address of token in IERC20
         token = IERC20(_token);
+         // Create instance of ContractB
         contractB = ContractB(_contractB);
     } 
 
     function deposit(uint amount)external{
+        // transfer from another account 
         token.transferFrom(msg.sender, address(this), amount);
+        // approve contract to send token 
         token.approve(address(contractB), amount);
         contractB.deposit(amount);
     }
