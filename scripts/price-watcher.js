@@ -25,3 +25,6 @@ module.exports = async done =>{
     }
     done();
 }
+
+// CoinGecko provides API for Crypto Pricing 
+// https://www.coingecko.com/en/api#explore-api
